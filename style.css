@@ -17,13 +17,15 @@ body {
     width: 300px;
     position: relative;
     transform-style: preserve-3d;
+
+    animation: cubeRot 7s linear infinite;
 }
 
 .side {
-    border: 10px solid palevioletred;
+    border: 10px solid darkcyan;
     width: 100%;
     height: 100%;
-    color: palevioletred;
+    color: darkcyan;
     font-size: 24px;
     display: flex;
     justify-content: center;
@@ -34,20 +36,34 @@ body {
 
 .front {
     transform: translateZ(150px);
+    background-color: red;
 }
 .back {
     transform: rotateY(180deg) translateZ(150px);
+    background-color: green;
 }
 .left {
     transform: rotateY(-90deg) translateZ(150px);
+    background-color: blue;
 }
 .right {
     transform: rotateY(90deg) translateZ(150px);
+    background-color: yellow;
 }
 .top {
     transform: rotateX(90deg) translateZ(150px);
+    background-color: blueviolet;
 }
 .bottom {
     transform: rotateX(-90deg) translateZ(150px);
+    background-color: orange;
 }
 
+@keyframes cubeRot {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
